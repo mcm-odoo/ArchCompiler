@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="oui:Button">
+        <button class="btn position-relative" t-att-class="props.className" t-att-disabled="!state.active" t-on-click.prevent="() => this.execute(this.state)">
+            <t t-slot="default"/>
+        </button>
+    </t>
+
+</templates>

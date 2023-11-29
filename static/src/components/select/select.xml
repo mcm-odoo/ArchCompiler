@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="oui:Select">
+        <select class="o_input ps-2 pe-4" t-on-change="(ev) => props.update(deserialize(ev.target.value))">
+            <option value="serialize(false)" t-att-selected="value === false" t-attf-style="{{ props.required ? 'display:none;' : '' }}" t-esc="props.placeholder"/>
+            <t t-foreach="props.options" t-as="option" t-key="option.value">
+                <option t-att-value="serialize(option.value)" t-att-selected="option.value === props.value" t-esc="option.label"/>
+            </t>
+        </select>
+    </t>
+
+</templates>

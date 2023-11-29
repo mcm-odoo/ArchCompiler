@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="oui:ComboBox">
+        <input class="o_input" t-att-list="datalistId" t-att-placeholder="props.placeholder" t-on-input="(ev) => this.onSearch(ev.target.value)"/>
+        <datalist t-att-id="datalistId">
+            <t t-foreach="props.options" t-as="option" t-key="option.key">
+                <option t-att-value="option.value" t-on-click="() => console.log(option)"/>
+            </t>
+        </datalist>
+    </t>
+
+</templates>

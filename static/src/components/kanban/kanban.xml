@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+
+    <t t-name="oui:Kanban">
+        <div class="o_kanban_renderer o_renderer d-flex o_kanban_grouped align-content-stretch">
+            <t t-foreach="props.groups" t-as="group" t-key="getGroupValue(group)">
+                <div class="o_kanban_group flex-shrink-0 flex-grow-1 flex-md-grow-0">
+                    <div class="o_kanban_header position-sticky top-0 z-index-1 py-2">
+                        <div class="o_kanban_header_title position-relative d-flex lh-lg">
+                            <span class="o_column_title flex-grow-1 d-inline-block mw-100 text-truncate fs-4 fw-bold align-top text-900">
+                                <t t-esc="getGroupLabel(group)"/>
+                            </span>
+                        </div>
+                    </div>
+                    <t t-foreach="getGroupRecords(group)" t-as="record" t-key="record.id">
+                        <div class="o_kanban_record d-flex flex-grow-1 flex-md-shrink-1 flex-shrink-0">
+                            <t t-slot="default" record="record"/>
+                        </div>
+                    </t>
+                </div>
+            </t>
+        </div>
+    </t>
+
+</templates>
